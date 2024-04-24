@@ -1,0 +1,23 @@
+apiVersion: meta.pkg.crossplane.io/v1
+kind: Configuration
+metadata:
+  name: objectstorage-composition
+  annotations:
+    # Set the annotations defining the maintainer, source, license, and description of your Configuration
+    meta.crossplane.io/maintainer: frank.allwardt@hansemerkur.de
+    meta.crossplane.io/source: github.com/k203007/objectstorage-composition
+    # Set the license of your Configuration
+    meta.crossplane.io/license: Apache-2.0
+    meta.crossplane.io/description: |
+      This is where you can describe your configuration.
+    meta.crossplane.io/readme: |
+      This is where you can add a readme for your configuration.
+spec:
+  # (Optional) Set the minimum version of Crossplane that this Configuration is compatible with
+  crossplane:
+    version: ">=v1.14.1-0"
+  # Add your dependencies here
+  dependsOn:
+    - provider: xpkg.upbound.io/crossplane-contrib/provider-aws-s3
+      version: "v1.3.1"
+
